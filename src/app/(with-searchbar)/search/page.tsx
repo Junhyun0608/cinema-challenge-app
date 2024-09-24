@@ -1,3 +1,5 @@
+import MovieItem from "@/components/MovieItem";
+import movies from "@/dummy.json";
 export default function Page({
   searchParams,
 }: {
@@ -5,5 +7,11 @@ export default function Page({
     q?: string;
   };
 }) {
-  return <div>Search 페이지 {searchParams.q}</div>;
+  return (
+    <div className="grid grid-cols-3 gap-[5px]">
+      {movies.slice(0, 3).map((movie) => (
+        <MovieItem key={movie.id} {...movie} />
+      ))}
+    </div>
+  );
 }

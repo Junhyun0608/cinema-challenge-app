@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { FormEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Searchbar() {
   const searchParams = useSearchParams();
@@ -16,7 +16,7 @@ export default function Searchbar() {
     setSearch(e.target.value);
   };
 
-  const submitHandler = (e: FormEvent) => {
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!search || q === search) {
       return;
