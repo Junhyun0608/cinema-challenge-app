@@ -1,10 +1,18 @@
-import movies from "@/dummy.json";
-
-export default function Page({
+export default async function Page({
   params,
 }: {
   params: { id: string | string[] };
 }) {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/${params.id}`
+  );
+
+  if (!response.ok) {
+    return <div>오류가 발생했습니다...</div>;
+  }
+
+  const movie = await response.json();
+
   const {
     id,
     title,
@@ -15,7 +23,8 @@ export default function Page({
     posterImgUrl,
     releaseDate,
     genres,
-  } = movies[5];
+  } = movie;
+
   return (
     <div className="flex flex-col gap-[10px]">
       <div
