@@ -4,7 +4,7 @@ import { MovieData } from "@/types";
 async function AllMovies() {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie`,
-    { cache: "no-store" }
+    { cache: "force-cache" }
   );
   const allBook: MovieData[] = await response.json();
 
@@ -45,11 +45,11 @@ export default async function Home() {
   return (
     <div className="flex flex-col gap-[50px]">
       <section>
-        <p className="text-[1.3rem] font-bold">지금 가장 추천하는 영화</p>
+        <p className="text-[1.3rem] font-bold mb-3">지금 가장 추천하는 영화</p>
         <RecoMovie />
       </section>
       <section>
-        <p className="text-[1.3rem] font-bold">등록된 모든 영화</p>
+        <p className="text-[1.3rem] font-bold mb-3">등록된 모든 영화</p>
         <AllMovies />
       </section>
     </div>
