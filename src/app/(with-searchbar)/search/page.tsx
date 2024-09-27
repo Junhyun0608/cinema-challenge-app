@@ -1,5 +1,6 @@
 import MovieItem from "@/components/MovieItem";
 import { MovieData } from "@/types";
+import { delay } from "@/util/delay";
 export default async function Page({
   searchParams,
 }: {
@@ -7,6 +8,7 @@ export default async function Page({
     q?: string;
   };
 }) {
+  await delay(1500);
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/search?q=${searchParams.q}`
   );
