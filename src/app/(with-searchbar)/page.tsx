@@ -18,7 +18,7 @@ async function AllMovies() {
     `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie`,
     { cache: "force-cache" }
   );
-  const allBook: MovieData[] = await response.json();
+  const allMovie: MovieData[] = await response.json();
 
   if (!response.ok) {
     return <div>오류가 발생했습니다...</div>;
@@ -26,7 +26,7 @@ async function AllMovies() {
 
   return (
     <div className="grid grid-cols-5 gap-[5px]">
-      {allBook.map((movie) => (
+      {allMovie.map((movie) => (
         <MovieItem key={`all-${movie.id}`} {...movie} />
       ))}
     </div>
