@@ -12,6 +12,6 @@ export default function MovieListSkeleton({
   return new Array(count)
     .fill(0)
     .map((_, idx) => (
-      <MovieItemSkeleton size={size} key={`book-item-skeleton-${idx}`} />
+      <MovieItemSkeleton size={size} key={`movie-item-skeleton-${idx}`} />
     ));
 }
