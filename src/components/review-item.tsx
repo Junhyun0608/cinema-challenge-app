@@ -1,4 +1,5 @@
 import { ReviewData } from "@/types";
+import ReviewItemDeleteButton from "./ReviewItemDeleteButton";
 
 export default function ReviewItem({
   id,
@@ -13,9 +14,9 @@ export default function ReviewItem({
       <div className="text-gray-300">{content}</div>
       <div className="flex justify-between">
         <div>{new Date(createdAt).toLocaleString()}</div>
-        <button className="text-red-400 hover:text-red-500 transition duration-150">
-          삭제하기
-        </button>
+        <div className="text-red-400 hover:text-red-500 transition duration-150 cursor-pointer">
+          <ReviewItemDeleteButton reviewId={id} movieId={movieId} />
+        </div>
       </div>
     </div>
   );
