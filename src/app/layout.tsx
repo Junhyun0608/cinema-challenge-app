@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
+import { ReactNode } from "react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,8 +20,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: ReactNode;
 }>) {
   return (
     <html lang="kr" className="max-w-[800px] px-5 mx-auto">
@@ -31,6 +34,7 @@ export default function RootLayout({
           </header>
           <main>{children}</main>
         </div>
+        {modal}
         <div id="modal-root"></div>
       </body>
     </html>
