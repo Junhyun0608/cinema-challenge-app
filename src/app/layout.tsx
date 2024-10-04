@@ -29,8 +29,9 @@ export default function RootLayout({
           <header className="py-[15px] text-[1.3rem] text-[red]">
             <Link href={"/"}>ONEBITE CINEMA</Link>
           </header>
+          <main>{children}</main>
         </div>
-        {children}
+        <div id="modal-root"></div>
       </body>
     </html>
   );

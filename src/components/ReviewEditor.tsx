@@ -18,7 +18,7 @@ export default function ReviewEditor({ movieId }: { movieId: string }) {
   return (
     <section className="">
       <form action={formAction} className="flex flex-col gap-4">
-        <input name="movieId" value={movieId} hidden />
+        <input name="movieId" value={movieId} readOnly hidden />
         <textarea
           disabled={isPending}
           required
