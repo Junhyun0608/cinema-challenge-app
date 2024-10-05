@@ -33,7 +33,7 @@ export default function Modal({ children }: { children: ReactNode }) {
         }}
         className="w-[80%] max-w-[700px] bg-gray-900 mt-5 rounded border-none text-white"
       >
-        <div className="p-6 z-">{children}</div>
+        <div className="p-6">{children}</div>
       </dialog>
     </>,
     document.getElementById("modal-root") as HTMLElement
